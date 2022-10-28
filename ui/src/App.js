@@ -34,7 +34,7 @@ class App extends Component {
       .catch((error) => {
         return error.status !== 401;
       });
-  }
+  };
 
   isLoginRequired = () => {
     this.setState({ error: null });
@@ -46,8 +46,12 @@ class App extends Component {
         let isSignInAnOption = false;
         if (isSecurityEnabled === 1) {
           isLogoutNeeded = true;
-          const isMakeViewerEndpointsPublic = response.data.data.make_viewer_endpoints_public;
-          if (isMakeViewerEndpointsPublic === 1 && !await this.isAdminEndpointAccessible()) {
+          const isMakeViewerEndpointsPublic =
+            response.data.data.make_viewer_endpoints_public;
+          if (
+            isMakeViewerEndpointsPublic === 1 &&
+            !(await this.isAdminEndpointAccessible())
+          ) {
             setViewerRole();
             isLogoutNeeded = false;
             isSignInAnOption = true;
@@ -59,7 +63,7 @@ class App extends Component {
         this.setState({
           isLoginRequired: false,
           isLogoutNeeded: isLogoutNeeded,
-          isSignInAnOption: isSignInAnOption
+          isSignInAnOption: isSignInAnOption,
         });
       })
       .catch((error) => {
@@ -111,7 +115,7 @@ class App extends Component {
             <Route
               path="/signin"
               render={() => (
-                <AllureDockerSigIn isLoginRequired={this.isLoginRequired}/>
+                <AllureDockerSigIn isLoginRequired={this.isLoginRequired} />
               )}
             />
             <Route render={() => <Redirect to="/signin" />} />
@@ -125,13 +129,18 @@ class App extends Component {
               <Route
                 path="/signin"
                 render={() => (
-                  <AllureDockerSigIn isLoginRequired={this.isLoginRequired} isHomeAnOption={!this.isSignInAnOption}/>
+                  <AllureDockerSigIn
+                    isLoginRequired={this.isLoginRequired}
+                    isHomeAnOption={!this.isSignInAnOption}
+                  />
                 )}
               />
             </React.Fragment>
-          )
+          );
         } else {
-          signInAnOption = (<Route path="/signin" exact render={() => <Redirect to="/" />} />)
+          signInAnOption = (
+            <Route path="/signin" exact render={() => <Redirect to="/" />} />
+          );
         }
 
         switchRouter = (
@@ -174,9 +183,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <ThemeProvider theme={darkTheme}>
-          <BrowserRouter basename={window._env_.ROUTER_BASE_NAME}>
-            {switchRouter}
-          </BrowserRouter>
+          <BrowserRouter basename="/allure">{switchRouter}</BrowserRouter>
         </ThemeProvider>
       </React.Fragment>
     );

@@ -18,12 +18,12 @@ class AllureDockerInfoDialog extends Component {
   getConfig = () => {
     const axios = localAxios.create();
     axios
-      .get(`${process.env.PUBLIC_URL}/config.json`)
+      .get(`/allure/config.json`)
       .then((response) => {
         this.setState({ version: response.data.version });
       })
       .catch((error) => {
-        this.setState({ version: 'NOT_FOUND' });
+        this.setState({ version: "NOT_FOUND" });
       });
   };
 
@@ -55,11 +55,7 @@ class AllureDockerInfoDialog extends Component {
             >
               Allure UI Version
             </Typography>
-            <Typography
-              variant="subtitle2"
-              color="secondary"
-              align="center"
-            >
+            <Typography variant="subtitle2" color="secondary" align="center">
               {this.state.version}
             </Typography>
           </DialogContentText>
@@ -72,11 +68,7 @@ class AllureDockerInfoDialog extends Component {
             >
               Support
             </Typography>
-            <Typography
-              variant="subtitle2"
-              color="secondary"
-              align="center"
-            >
+            <Typography variant="subtitle2" color="secondary" align="center">
               <Link
                 color="inherit"
                 href="https://gitter.im/allure-docker-service/community"
@@ -96,11 +88,7 @@ class AllureDockerInfoDialog extends Component {
             >
               UI
             </Typography>
-            <Typography
-              variant="subtitle2"
-              color="secondary"
-              align="center"
-            >
+            <Typography variant="subtitle2" color="secondary" align="center">
               <Link
                 color="inherit"
                 href="https://github.com/fescobar/allure-docker-service-ui"
@@ -120,11 +108,7 @@ class AllureDockerInfoDialog extends Component {
             >
               API
             </Typography>
-            <Typography
-              variant="subtitle2"
-              color="secondary"
-              align="center"
-            >
+            <Typography variant="subtitle2" color="secondary" align="center">
               <Link
                 color="inherit"
                 href="https://github.com/fescobar/allure-docker-service"
@@ -144,11 +128,7 @@ class AllureDockerInfoDialog extends Component {
             >
               Examples
             </Typography>
-            <Typography
-              variant="subtitle2"
-              color="secondary"
-              align="center"
-            >
+            <Typography variant="subtitle2" color="secondary" align="center">
               <Link
                 color="inherit"
                 href="https://github.com/fescobar/allure-docker-service-examples"
@@ -171,11 +151,7 @@ class AllureDockerInfoDialog extends Component {
             >
               {"Frank Escobar"}
             </Typography>
-            <Typography
-              variant="subtitle2"
-              color="secondary"
-              align="center"
-            >
+            <Typography variant="subtitle2" color="secondary" align="center">
               <Link
                 color="inherit"
                 href="https://www.linkedin.com/in/fescobarsystems/"

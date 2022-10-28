@@ -189,7 +189,7 @@ class AllureDockerProject extends Component {
   };
 
   copyReportUrl = (reportUrlSelected) => {
-    if(reportUrlSelected) {
+    if (reportUrlSelected) {
       navigator.clipboard.writeText(reportUrlSelected);
       this.openCopyToolTip();
     }
@@ -280,7 +280,7 @@ class AllureDockerProject extends Component {
       .then((response) => {
         this.setState({
           reportSelectedValue: reportSelectedValue,
-          reportSelected: `${window._env_.ALLURE_DOCKER_API_URL}${reportPath}`,
+          reportSelected: `/allure-docker-service${reportPath}`,
           reportUrlSelected: reportUrlSelected,
         });
       })
@@ -312,7 +312,7 @@ class AllureDockerProject extends Component {
           projectId,
           reports[0].linkValue
         );
-        reportIframe = `${window._env_.ALLURE_DOCKER_API_URL}${reportPath}`;
+        reportIframe = `/allure-docker-service${reportPath}`;
         reportSelectedValue = reports[0].linkValue;
         reportUrlSelected = reports[0].linkVisibleText;
 

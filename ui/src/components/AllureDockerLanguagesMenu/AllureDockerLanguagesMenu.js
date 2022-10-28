@@ -7,7 +7,20 @@ import { withRouter } from "react-router-dom";
 import axios from "../../api/axios-allure-docker";
 import { redirect, refreshCurrentPageInSeconds } from "../../utility/navigate";
 
-const languages = ["en", "ru", "zh", "de", "nl", "he", "br", "pl", "ja", "es", "kr", "fr"];
+const languages = [
+  "en",
+  "ru",
+  "zh",
+  "de",
+  "nl",
+  "he",
+  "br",
+  "pl",
+  "ja",
+  "es",
+  "kr",
+  "fr",
+];
 class AllureDockerLanguagesMenu extends Component {
   state = {
     languageCode: null,
@@ -63,7 +76,7 @@ class AllureDockerLanguagesMenu extends Component {
         <iframe
           hidden
           title="loadLanguage"
-          src={`${window._env_.ALLURE_DOCKER_API_URL}/select-language?code=${this.state.languageCode}`}
+          src={`/allure-docker-service/select-language?code=${this.state.languageCode}`}
         ></iframe>
       );
     }

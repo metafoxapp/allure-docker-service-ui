@@ -35,15 +35,16 @@ class AllureDockerErrorPage extends Component {
               Check if you have access to{" "}
               <Link
                 color="secondary"
-                href={window._env_.ALLURE_DOCKER_API_URL}
+                href="/allure-docker-service"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                {window._env_.ALLURE_DOCKER_API_URL}
+                /allure-docker-service
               </Link>
             </Typography>
             <Typography variant="h5" gutterBottom>
-              Or pull the latest "frankescobar/allure-docker-service" API image (remove your current latest version)
+              Or pull the latest "frankescobar/allure-docker-service" API image
+              (remove your current latest version)
             </Typography>
           </React.Fragment>
         );

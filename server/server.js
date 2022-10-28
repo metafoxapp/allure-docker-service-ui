@@ -5,7 +5,7 @@ const fs = require("fs");
 const public = __dirname;
 const routerVersion = express.Router();
 const routerConfig = express.Router();
-const urlPrefix = process.env.URL_PREFIX;
+const urlPrefix = "/allure";
 const nativePrefix = "/allure-docker-service-ui";
 let prefix = nativePrefix;
 if (urlPrefix) {

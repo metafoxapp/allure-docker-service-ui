@@ -169,7 +169,7 @@ class AllureDockerReportFullView extends Component {
       this.state.report.projectId &&
       this.state.report.id
     ) {
-      const reportIframe = `${window._env_.ALLURE_DOCKER_API_URL}/projects/${this.state.report.projectId}/reports/${this.state.report.id}/index.html?redirect=false`;
+      const reportIframe = `/allure-docker-service/projects/${this.state.report.projectId}/reports/${this.state.report.id}/index.html?redirect=false`;
       content = (
         <Card>
           <div align="right">

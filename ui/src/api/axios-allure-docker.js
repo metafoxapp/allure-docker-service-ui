@@ -6,7 +6,7 @@ import { setRoles } from "../utility/user-actions";
 const cookies = new Cookies();
 
 const refreshInstance = axios.create({
-  baseURL: window._env_.ALLURE_DOCKER_API_URL,
+  baseURL: "/allure-docker-service",
 });
 
 refreshInstance.interceptors.request.use(
@@ -26,7 +26,7 @@ refreshInstance.interceptors.request.use(
 );
 
 const instance = axios.create({
-  baseURL: window._env_.ALLURE_DOCKER_API_URL,
+  baseURL: "/allure-docker-service",
 });
 
 instance.interceptors.request.use(

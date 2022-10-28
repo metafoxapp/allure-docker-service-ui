@@ -146,7 +146,7 @@ class AllureDockerToolbar extends Component {
   };
 
   goToSwagger = () => {
-    window.open(`${window._env_.ALLURE_DOCKER_API_URL}/swagger`, "_blank");
+    window.open(`/allure-docker-service/swagger`, "_blank");
   };
 
   goToHome = () => {
@@ -155,7 +155,7 @@ class AllureDockerToolbar extends Component {
 
   goToSignIn = () => {
     this.props.history.push(`/signin`);
-  }
+  };
 
   handleAPIErrorAlert = (error) => {
     this.props.setAPIAlert(
@@ -240,7 +240,7 @@ class AllureDockerToolbar extends Component {
             options={this.state.searchResults}
             onInputChange={this.handleSearch}
             onChange={this.handleSearchValue}
-            noOptionsText={'project not found'}
+            noOptionsText={"project not found"}
             renderInput={(params) => (
               <TextField
                 {...params}
@@ -261,7 +261,11 @@ class AllureDockerToolbar extends Component {
 
         {isSignInAnOption}
 
-        <IconButton color="inherit" onClick={this.openNewProjectDialog} disabled={!isAdmin()}>
+        <IconButton
+          color="inherit"
+          onClick={this.openNewProjectDialog}
+          disabled={!isAdmin()}
+        >
           <AddCircle />
         </IconButton>
 

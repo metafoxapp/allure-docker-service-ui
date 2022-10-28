@@ -5,7 +5,7 @@ export const redirect = (error) => {
 };
 
 export const redirectRoot = () => {
-  window.location.replace(window._env_.ROUTER_BASE_NAME);
+  window.location.replace("/allure");
 };
 
 export const refreshCurrentPage = () => {

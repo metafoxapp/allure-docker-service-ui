@@ -35,7 +35,7 @@ class AllureDockerMobileMenu extends Component {
   };
 
   goToSwagger = () => {
-    window.open(`${window._env_.ALLURE_DOCKER_API_URL}/swagger`, "_blank");
+    window.open(`/allure-docker-service/swagger`, "_blank");
   };
 
   render() {
